@@ -1,0 +1,13 @@
+version: '3.7'
+
+networks:
+  server_gotenberg:
+    name: server_gotenberg
+
+services:
+  gotenberg:
+    image: gotenberg/gotenberg:7
+    container_name: gotenberg
+    restart: unless-stopped
+    networks:
+      - server_gotenberg
